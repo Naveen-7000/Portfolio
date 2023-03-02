@@ -1,3 +1,3 @@
-# Adeola Adeoti
+# Naveen Bhusare
 
-Second version of my portfolio
+My portfolio
