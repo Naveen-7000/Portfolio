@@ -140,3 +140,19 @@
     color: #8b8b8b;
   }
 }
+
+.para-list {
+  font-size: 1.7rem;
+  line-height: 130.4%;
+  color: var(--color-gray);
+  margin-top: 1rem;
+  li{
+    font-size: 2rem;
+    margin-left: 1rem;
+    background-image: linear-gradient(to right, #b0f3f1, #ffcfdf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+}

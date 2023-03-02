@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { MobileNavigation } from "./MobileNavigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const variants = {
   open: {
@@ -40,10 +41,12 @@ export const Navigation = ({ isOpen, toggleOpen }: any) => {
       >
         <Link legacyBehavior href="/">
           <a className="brand-logo">
-            <img
+            <Image
               className="brand-logo__icon"
-              src="svg/naveen-logo-left.svg"
-              alt="adeola logo icon"
+              src="/svg/naveen-logo-left.svg"
+              alt="naveen logo icon"
+              width={58}
+              height={42}
             />
           </a>
         </Link>

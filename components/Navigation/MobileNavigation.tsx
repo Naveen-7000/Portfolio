@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const openTransition = {
   duration: 1.1,
@@ -101,7 +102,7 @@ export const MobileNavigation = ({ variants, isOpen }: any) => (
             href="https://horizon-ui.com/horizon-tailwind-react/admin/default"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/Horizon-1.png" alt="Horizon" />
+            <Image src="/webp/Horizon-1.png" alt="Horizon" width={272} height={268} />
             <h2>
               HORIZON UI
             </h2>
@@ -112,7 +113,7 @@ export const MobileNavigation = ({ variants, isOpen }: any) => (
             rel="noopener"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/Metropolis.png" alt="Metropolis" />
+            <Image src="/webp/Metropolis.png" alt="Metropolis" width={272} height={268}/>
             <h2>METROPOLIS</h2>
           </a>
           <a
@@ -121,7 +122,7 @@ export const MobileNavigation = ({ variants, isOpen }: any) => (
             rel="noopener"
             className="navigation-bottom__projects-card"
           >
-            <img src="webp/linkedin-landing.png" alt="linkedin" />
+            <Image src="/webp/linkedin-landing.png" alt="linkedin" width={272} height={268} />
             <h2>
               LINKEDIN
               <br />

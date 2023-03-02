@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Navigation } from "../components/Navigation/Navigation";
-import useSwr from "swr";
 import ReactGa from "react-ga";
 
 interface indexProps {}
@@ -24,9 +24,6 @@ const fetcher = (url: any) => fetch(url).then((res) => res.json());
 const index: React.FC<indexProps> = ({}) => {
   const [speakerState, setSpeakerState] = useState("muted");
   const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);
-  const { data:  error } = useSwr("/api/tweets", fetcher);
-
-  if (error) console.log(error);
 
   const refScroll = React.useRef(null);
   let lscroll: any;
@@ -116,7 +113,7 @@ const index: React.FC<indexProps> = ({}) => {
       <div id="menu-target" data-scroll-container ref={refScroll}>
         <Head>
           <link rel="icon" href="svg/naveen-logo-left.svg" />
-          <link href="https://adeolaadeoti.xyz/" rel="canonical" />
+          <link href="https://naveenbhusare.live/" rel="canonical" />
           <meta name="theme-color" content="#10101A" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
@@ -132,7 +129,7 @@ const index: React.FC<indexProps> = ({}) => {
             property="og:title"
             content="Naveen Bhusare 🚀 &mdash; Frontend Devloper"
           />
-          <meta property="og:url" content="https://adeolaadeoti.xyz/" />
+          <meta property="og:url" content="https://naveenbhusare.live/" />
           <meta property="og:image" content="webp/preview-image.png" />
           <meta
             property="og:description"
@@ -148,7 +145,7 @@ const index: React.FC<indexProps> = ({}) => {
           />
           <meta name="twitter:image" content="webp/preview-image.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://adeolaadeoti.xyz/" />
+          <meta name="twitter:url" content="https://naveenbhusare.live/" />
         </Head>
         <audio loop id="audioPlayer" autoPlay style={{ display: "none" }}>
           <source src="sound/preloader.mp3" type="audio/mp3" />
@@ -166,7 +163,7 @@ const index: React.FC<indexProps> = ({}) => {
               animate={{ x: 0, opacity: 1, transition: { ...transition } }}
               className="preloader__left"
             >
-              <img src="svg/naveen-left-logo.svg" alt="adeola logo" />
+              <Image src="/svg/naveen-left-logo.svg" alt="naveen logo" width={50} height={69} />
             </motion.div>
             <motion.div
               initial={{ x: 10, opacity: 0 }}
@@ -216,7 +213,7 @@ const index: React.FC<indexProps> = ({}) => {
                   &nbsp;
                 </div>
                 <div className="speaker__muted">
-                  <img src="svg/muted.svg" alt="muted icon" />
+                  <Image src="/svg/muted.svg" alt="muted icon" width={9} height={9}/>
                 </div>
                 <div className="speaker__unmuted">
                   <svg
@@ -298,13 +295,16 @@ const index: React.FC<indexProps> = ({}) => {
               experience everyday life, not endure it. I am highly motivated and
               thrive in fast-paced, collaborative environments where I can work
               with my team to continuously ship, learn, and iterate.
-              <br />
-              <br /> My strong communication and problem-solving skills allow me
-              to contribute effectively to any project, and I thrive on the
-              opportunity to learn and grow alongside my team. When I'm not in
-              front of a screen, you can find me at the gym, tweeting,
-              reading, traveling, or exploring nature.
             </p>
+            <ul className="para-list">
+            The main area of my expertise are front-end & design tools like:
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>ReactJs</li>
+              <li>NextJs</li>
+              <li>TailwindCSS</li>
+              <li>NodeJs</li>
+            </ul>
           </section>
           <section id="sectionProjects" className="section-projects">
             <h1 className="heading-1">
@@ -334,8 +334,8 @@ const index: React.FC<indexProps> = ({}) => {
                 className="project-card__middle"
                 data-displacement="webp/myDistorsionImage.webp"
               >
-                <img src="webp/Horizon-1.png" alt="Horizon image"  />
-                <img src="webp/Horizon-logo.png" alt="Horizon logo" />
+                <Image loading="lazy" src="/webp/Horizon-1.png" alt="Horizon image" width={324} height={417} />
+                <Image loading="lazy" src="/webp/Horizon-logo.png" alt="Horizon logo" width={324} height={417} />
               </div>
               <div className="project-card__right">
                 <h2
@@ -364,7 +364,7 @@ const index: React.FC<indexProps> = ({}) => {
                     target="_blank"
                     href="https://github.com/Naveen-7000/Horizen-UI"
                   >
-                    <img src="svg/github.svg" alt="github icon" />
+                    <Image src="/svg/github.svg" alt="github icon" width={21} height={20} />
                   </a>
                 </div>
               </div>
@@ -378,8 +378,8 @@ const index: React.FC<indexProps> = ({}) => {
                 className="project-card__middle"
                 data-displacement="webp/myDistorsionImage.webp"
               >
-                <img src="webp/Metropolis.png" alt="Metropolis" />
-                <img src="webp/Metropolish-logo.png" alt="Metropolis logo" />
+                <Image src="/webp/Metropolis.png" alt="Metropolis" width={324} height={417}/>
+                <Image src="/webp/Metropolish-logo.png" alt="Metropolis logo" width={324} height={417} />
               </div>
               <div className="project-card__right">
                 <h2
@@ -408,7 +408,7 @@ const index: React.FC<indexProps> = ({}) => {
                     target="_blank"
                     href="https://github.com/Naveen-7000/Metropolis"
                   >
-                    <img src="svg/github.svg" alt="github icon" />
+                    <Image src="/svg/github.svg" alt="github icon" width={21} height={20} />
                   </a>
                 </div>
               </div>
@@ -424,8 +424,8 @@ const index: React.FC<indexProps> = ({}) => {
                 className="project-card__middle"
                 data-displacement="webp/myDistorsionImage.webp"
               >
-                <img src="webp/linkedin-landing.png" alt="linkedin" />
-                <img src="webp/linkedin-logo.png" alt="linkedin logo" />
+                <Image src="/webp/linkedin-landing.png" alt="linkedin" width={324} height={417} />
+                <Image src="/webp/linkedin-logo.png" alt="linkedin logo" width={324} height={417} />
               </div>
               <div className="project-card__right">
                 <h2
@@ -455,121 +455,14 @@ const index: React.FC<indexProps> = ({}) => {
                     target="_blank"
                     href="https://github.com/Naveen-7000/linkedin-clone"
                   >
-                    <img src="svg/github.svg" alt="github icon" />
+                    <Image src="/svg/github.svg" alt="github icon" width={21} height={20} />
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* <div className="project-card">
-              <div className="project-card__left">
-                <h4 className="heading-4">HTML, SCSS, JAVASCRIPT, GSAP</h4>
-              </div>
-              <div
-                className="project-card__middle"
-                data-displacement="webp/myDistorsionImage.webp"
-              >
-                <img src="webp/adeola-1.webp" alt="adeola model" />
-                <img src="webp/adeola-2.webp" alt="adeola logo" />
-              </div>
-              <div className="project-card__right">
-                <h2
-                  data-scroll
-                  data-scroll-offset="35%"
-                  data-scroll-repeat={true}
-                  data-scroll-class="adeola-anim"
-                  className="heading-2"
-                >
-                  AdeolaAdeoti
-                  <br /> version 1
-                </h2>
-                <a
-                  rel="noopener"
-                  target="_blank"
-                  href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
-                  className="project-card__link"
-                >
-                  VIEW SOURCE CODE
-                </a>
-                <div className="project-card__socials">
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://dribbble.com/shots/12338926-Adeola-Adeoti-Portfolio"
-                  >
-                    <img src="svg/dribble.svg" alt="dribble icon" />
-                  </a>
-                  <a
-                    rel="noopener"
-                    target="_blank"
-                    href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
-                  >
-                    <img src="svg/github.svg" alt="github icon" />
-                  </a>
-                </div>
-              </div>
-            </div> */}
           </section>
          
-          {/* <section
-            data-scroll
-            data-scroll-offset="35%"
-            data-scroll-repeat={true}
-            data-scroll-class="section-reviews__bg"
-            className="section-reviews"
-          >
-            <div className="section-reviews__top">
-              <h1 className="heading-1">
-                <span> </span> <small>😊</small>
-              </h1>
-              <p className="paragraph paragraph__sub">
-                What people are saying about my last portfolio
-              </p>
-            </div>
-            <div className="section-reviews__bottom">
-              <div className="section-reviews__bottom-wrapper review-card__anim1">
-                {reviews?.data.map((review: Ireply) => (
-                  <div key={review.id} className="review-card">
-                    <div className="review-card__top">
-                      <div className="review-card__top--left">
-                        <p className="review-card__p">{review.name}</p>
-                        <h3 className="review-card__h3">{review.userName}</h3>
-                      </div>
-                      <div className="review-card__top--right">
-                        <img src="svg/twitter.svg" alt="twitter icon" />
-                      </div>
-                    </div>
-                    <div className="review-card__bottom">
-                      <h2 className="review-card__h2">{review.reply}</h2>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="section-reviews__bottom-wrapper review-card__anim2">
-                {reviews?.data.sort().map((review: Ireply) => (
-                  <div key={review.id} className="review-card">
-                    <div className="review-card__top">
-                      <div className="review-card__top--left">
-                        <p className="review-card__p">{review.name}</p>
-                        <h3 className="review-card__h3">{review.userName}</h3>
-                      </div>
-                      <div className="review-card__top--right">
-                        <img src="svg/twitter.svg" alt="twitter icon" />
-                      </div>
-                    </div>
-                    <div className="review-card__bottom">
-                      <h2 className="review-card__h2">{review.reply}</h2>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section> */}
-          {/* <section className="sectionCoding">
-          <h1 className="heading-1">
-              <span>Coding Profile </span> <small>🤙</small>
-            </h1>
-          </section> */}
           <section className="section-contact">
             <h1 className="heading-1">
               <span>Sold Yet? </span> <small>🤙</small>
@@ -578,7 +471,7 @@ const index: React.FC<indexProps> = ({}) => {
               Thanks for stopping by, I’m currently looking to join a new team
               of creative designers and developers. If you think we might be a
               good fit for one another, give me a
-              <a href="tel:+917000351723"> call 🇳🇬 &nbsp;</a>
+              <a href="tel:+917000351723"> call IN &nbsp;</a>
               or send me an
               <a
                 href="mailto:navinbhusare89@gmail.com"
@@ -587,8 +480,8 @@ const index: React.FC<indexProps> = ({}) => {
               >
                 &nbsp; email 📧
               </a>
-              and here is my <a
-                href="#"
+                &nbsp; and here is my <a
+                href="https://drive.google.com/file/d/17sluj3KKwwSXyIoDPoO1AuLxHF01Xpvq/view?usp=share_link"
                 rel="noopener"
                 target="_blank"
               >
@@ -629,26 +522,12 @@ const index: React.FC<indexProps> = ({}) => {
         </main>
         <footer className="footer">
           <p>Design and Developed by Naveen ✨</p>
-          <img
-            src="svg/naveen-logo-left.svg"
+          <Image
+            src="/svg/naveen-logo-left.svg"
             alt="design and devloped by Naveen"
+            width={52}
+            height={38}
           />
-          {/* <div className="footer__socials">
-            <a
-              href="https://dribbble.com/shots/16100745-Adeola-Adeoti-Personal-Website"
-              target="_blank"
-              rel="noopener"
-            >
-              <img src="svg/dribble.svg" alt="dribble logo" />
-            </a>
-            <a
-              href="https://github.com/adeolaadeoti/adeolaadeoti-v2"
-              target="_blank"
-              rel="noopener"
-            >
-              <img src="svg/github.svg" alt="github logo" />
-            </a>
-          </div> */}
         </footer>
       </div>
     </>
